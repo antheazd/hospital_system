@@ -29,6 +29,17 @@ impl Patient{
             address}
     }
 
+    pub fn build_patient(id: u64) -> Patient{
+        let name = input::input_str(String::from("Name"));
+        let surname = input::input_str(String::from("Surname"));
+        let age = input::input_num_u32(String::from("Age"));
+        let height = input::input_num_u32(String::from("Height"));
+        let weight = input::input_num_u32(String::from("Weight"));
+        let phone = input::input_str(String::from("Phone"));
+        let address = input::input_str(String::from("Address"));
+        Patient::new(id,name, surname, age, height, weight, phone, address)
+    }
+
     pub fn print_info(&self)-> (){
         println!("({}) Patient {} {}", self.id, self.name, self.surname);
         println!("Age: {}", self.age);

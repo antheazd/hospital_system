@@ -77,15 +77,8 @@ fn main() {
                             }
                         }
                         3 => {
-                            let name = components::input::input_str(String::from("Name"));
-                            let surname = components::input::input_str(String::from("Surname"));
-                            let age = components::input::input_num_u32(String::from("Age"));
-                            let height = components::input::input_num_u32(String::from("Height"));
-                            let weight = components::input::input_num_u32(String::from("Weight"));
-                            let phone = components::input::input_str(String::from("Phone"));
-                            let address = components::input::input_str(String::from("Address"));
                             unsafe{EXISTING_PATIENTS += 1;}
-                            unsafe{patients.push(components::patient::Patient::new(EXISTING_PATIENTS, name, surname, age, height, weight, phone, address));}
+                            unsafe{patients.push(components::patient::Patient::build_patient(EXISTING_PATIENTS));}
                         }
                         4 => break 'patients_menu,
                         1000=> break 'main_menu,
@@ -133,14 +126,8 @@ fn main() {
                             }
                         }
                         2 => {
-                            let name = components::input::input_str(String::from("Name"));
-                            let surname = components::input::input_str(String::from("Surname"));
-                            let age = components::input::input_num_u32(String::from("Age"));
-                            let specialty = components::input::input_str(String::from("Specialty"));
-                            let phone = components::input::input_str(String::from("Phone"));
-                            let address = components::input::input_str(String::from("Address"));
                             unsafe{EXISTING_DOCTORS += 1;}
-                            unsafe{doctors.push(components::doctor::Doctor::new(EXISTING_DOCTORS, name, surname, age, specialty, phone, address));}
+                            unsafe{doctors.push(components::doctor::Doctor::build_doctor(EXISTING_DOCTORS));}
                         }
                         3 => break 'doctors_menu,
                         1000=> break 'main_menu,

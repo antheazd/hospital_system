@@ -1,3 +1,5 @@
+use crate::components::input;
+
 pub struct Doctor{
     id: u64,
     name: String,
@@ -21,6 +23,17 @@ impl Doctor{
             address,
     }
 }
+    pub fn build_doctor(id: u64) -> Doctor{
+        let name = input::input_str(String::from("Name"));
+        let surname = input::input_str(String::from("Surname"));
+        let age = input::input_num_u32(String::from("Age"));
+        let specialty = input::input_str(String::from("Specialty"));
+        let phone = input::input_str(String::from("Phone"));
+        let address = input::input_str(String::from("Address"));
+
+        Doctor::new(id, name, surname, age, specialty, phone, address)
+    }
+
     pub fn print_info(&self){
             println!("");
             println!("({}) Doctor {} {}",  self.id, self.name, self.surname);
