@@ -45,7 +45,7 @@ impl Patient{
     }
 
     pub fn print_basic_info(&self){
-        println!("({}) Doctor {} {}", self.id, self.name.to_string().trim_end(), self.surname.to_string().trim_end());
+        println!("({}) Patient {} {}", self.id, self.name.to_string().trim_end(), self.surname.to_string().trim_end());
     }
 
     pub fn add_diagnosis(&self)-> (){

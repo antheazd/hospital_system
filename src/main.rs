@@ -12,6 +12,7 @@ fn main() {
         println!("------------MAIN MENU------------");
         println!("|1) Patients menu               |");
         println!("|2) Doctors menu                |");
+        println!("|1000) Exit program             |");
         println!("---------------------------------");
         let mut input = components::input::input_num_u32(String::from("Choose option"));
 
@@ -31,6 +32,7 @@ fn main() {
                     println!("|2) Add diagnose                |");
                     println!("|3) Add patient                 |");
                     println!("|4) <-Back                      |");
+                    println!("|1000) <-Exit program           |");
                     println!("---------------------------------");
                     input = components::input::input_num_u32(String::from("Choose option"));
 
@@ -86,6 +88,7 @@ fn main() {
                             unsafe{patients.push(components::patient::Patient::new(EXISTING_PATIENTS, name, surname, age, height, weight, phone, address));}
                         }
                         4 => break 'patients_menu,
+                        1000=> break 'main_menu,
                         _ => continue,
                     }
 
@@ -105,6 +108,7 @@ fn main() {
                     println!("|1) See doctor's info           |");
                     println!("|2) Add doctor                  |");
                     println!("|3) <-Back                      |");
+                    println!("|1000) <-Exit program           |");
                     println!("---------------------------------");
                     input = components::input::input_num_u32(String::from("Choose option"));
                     match input {
@@ -139,12 +143,15 @@ fn main() {
                             unsafe{doctors.push(components::doctor::Doctor::new(EXISTING_DOCTORS, name, surname, age, specialty, phone, address));}
                         }
                         3 => break 'doctors_menu,
+                        1000=> break 'main_menu,
                         _ => continue,
                     }
 
                 }
             }
 
+
+            1000 => break 'main_menu,
             _  =>  continue,
         }
     }
