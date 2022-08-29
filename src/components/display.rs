@@ -1,5 +1,6 @@
-use crate::components::input;
+use crate::components::input; //Using input functions from components/input.rs
 
+//Display main menu design
 pub fn main_menu() -> u32{
         println!("\n\n\n\n\n\n");
         println!("------------MAIN MENU------------");
@@ -10,6 +11,7 @@ pub fn main_menu() -> u32{
         input::input_num_u32(String::from("Choose option"))
 }
 
+//Display patients menu design
 pub fn patients_menu() -> (){
     println!("\n\n\n\n\n\n");
     println!("---------------------------------");
@@ -17,6 +19,7 @@ pub fn patients_menu() -> (){
     println!("---------------------------------");
 }
 
+//Display patients menu options and return users choice
 pub fn patients_menu_options() -> u32{
     println!("---------------------------------");
     println!("|1) See patients info           |");
@@ -25,9 +28,10 @@ pub fn patients_menu_options() -> u32{
     println!("|4) <-Back                      |");
     println!("|1000) <-Exit program           |");
     println!("---------------------------------");
-    input::input_num_u32(String::from("Choose option"))
+    input::input_num_u32(String::from("Choose option")) //scan and return users choice
 }
 
+//Display doctors menu design
 pub fn doctors_menu() -> (){
     println!("\n\n\n\n\n\n");
     println!("---------------------------------");
@@ -35,6 +39,7 @@ pub fn doctors_menu() -> (){
     println!("---------------------------------");
 }
 
+//Display doctors menu options and return users choice
 pub fn doctors_menu_options() -> u32{
     println!("---------------------------------");
     println!("|1) See doctor's info           |");
@@ -42,9 +47,11 @@ pub fn doctors_menu_options() -> u32{
     println!("|3) <-Back                      |");
     println!("|1000) <-Exit program           |");
     println!("---------------------------------");
-    input::input_num_u32(String::from("Choose option"))
+    input::input_num_u32(String::from("Choose option")) //scan and return users choice
 }
 
+
+//Display exit option
 pub fn exit(){
     println!("---------------------------------");
     println!("|       Press 0 for exit        |");
