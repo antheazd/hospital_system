@@ -8,33 +8,37 @@ fn main() {
     let mut doctors: Vec<components::doctor::Doctor> = Vec::new();
 
     'main_menu: loop {
+        println!("\n\n\n\n\n\n");
         println!("------------MAIN MENU------------");
-        println!("1) Patients menu");
-        println!("2) Doctors menu");
+        println!("|1) Patients menu               |");
+        println!("|2) Doctors menu                |");
         println!("---------------------------------");
         let mut input = components::input::input_num_u32(String::from("Choose option"));
 
         match input{
             1 => {
                 'patients_menu: loop{
+                    println!("\n\n\n\n\n\n");
                     println!("---------------------------------");
-                    println!("Patients menu");
+                    println!("|        Patients menu          |");
                     println!("---------------------------------");
                     let iter = patients.iter();
                     for patient in iter{
                         patient.print_basic_info();
                     }
                     println!("---------------------------------");
-                    println!("1) See patients info");
-                    println!("2) Add diagnose");
-                    println!("3) Add patient");
-                    println!("4) <-Back");
+                    println!("|1) See patients info           |");
+                    println!("|2) Add diagnose                |");
+                    println!("|3) Add patient                 |");
+                    println!("|4) <-Back                      |");
                     println!("---------------------------------");
                     input = components::input::input_num_u32(String::from("Choose option"));
 
                     match input {
                         1 => {
-                            println!("Press 0 for exit");
+                            println!("---------------------------------");
+                            println!("|       Press 0 for exit        |");
+                            println!("---------------------------------");
                             'print_info: loop{
                                 let id = components::input::input_num_u64(String::from("Patient id"));
 
@@ -53,7 +57,9 @@ fn main() {
                         }
 
                         2 => {
-                            println!("Press 0 for exit");
+                            println!("---------------------------------");
+                            println!("|       Press 0 for exit        |");
+                            println!("---------------------------------");
                             'add_diagnose: loop{
                                 let id = components::input::input_num_u64(String::from("Patient id"));
 
@@ -87,22 +93,25 @@ fn main() {
             }
             2 => {
                 'doctors_menu: loop{
+                    println!("\n\n\n\n\n\n");
                     println!("---------------------------------");
-                    println!("Doctors menu");
+                    println!("|         Doctors menu          |");
                     println!("---------------------------------");
                     let iter = doctors.iter();
                     for doctor in iter{
                         doctor.print_basic_info();
                     }
                     println!("---------------------------------");
-                    println!("1) See doctor's info");
-                    println!("2) Add doctor");
-                    println!("3) <-Back");
+                    println!("|1) See doctor's info           |");
+                    println!("|2) Add doctor                  |");
+                    println!("|3) <-Back                      |");
                     println!("---------------------------------");
                     input = components::input::input_num_u32(String::from("Choose option"));
                     match input {
                         1 =>{
-                            println!("Press 0 for exit");
+                            println!("---------------------------------");
+                            println!("|       Press 0 for exit        |");
+                            println!("---------------------------------");
                             'print_doc_info: loop{
                                 let id = components::input::input_num_u64(String::from("Doctor's id"));
 
