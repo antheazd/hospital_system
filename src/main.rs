@@ -34,10 +34,14 @@ fn main() {
 
                     match input {
                         1 => {
+                            println!("Press 0 for exit");
                             'print_info: loop{
                                 let id = components::input::input_num_u64(String::from("Patient id"));
+
+                                if id == 0{break 'print_info;}
+
                                 let iterator = patients.iter();
-            
+                                
                                 for patient in iterator{
                                     if patient.id_equal(id) {
                                         patient.print_info();
@@ -49,8 +53,12 @@ fn main() {
                         }
 
                         2 => {
+                            println!("Press 0 for exit");
                             'add_diagnose: loop{
                                 let id = components::input::input_num_u64(String::from("Patient id"));
+
+                                if id == 0{break 'add_diagnose;}
+
                                 let iterator = patients.iter();
                                 for patient in iterator{
                                     if patient.id_equal(id) {
@@ -94,8 +102,12 @@ fn main() {
                     input = components::input::input_num_u32(String::from("Choose option"));
                     match input {
                         1 =>{
+                            println!("Press 0 for exit");
                             'print_doc_info: loop{
                                 let id = components::input::input_num_u64(String::from("Doctor's id"));
+
+                                if id == 0{break 'print_doc_info;}
+
                                 let iterator = doctors.iter();
             
                                 for doctor in iterator{
