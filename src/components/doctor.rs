@@ -36,11 +36,11 @@ impl Doctor{
 
     pub fn print_info(&self){
             println!("");
-            println!("({}) Doctor {} {}",  self.id, self.name, self.surname);
-            println!("Specializes in: {} cm", self.specialty);
+            println!("({}) Doctor {} {}",  self.id, self.name.to_string().trim_end(), self.surname.to_string().trim_end());
+            println!("Specializes in: {} cm", self.specialty.to_string().trim_end());
             println!("Age: {}", self.age);
-            println!("Adress: {} kg", self.address);
-            println!("Phone number: {}", self.phone_number);
+            println!("Adress: {} kg", self.address.to_string().trim_end());
+            println!("Phone number: {}", self.phone_number.to_string().trim_end());
         }
     pub fn print_basic_info(&self){
         println!("({}) Doctor {} {}", self.id, self.name.to_string().trim_end(), self.surname.to_string().trim_end());

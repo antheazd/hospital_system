@@ -41,12 +41,12 @@ impl Patient{
     }
 
     pub fn print_info(&self)-> (){
-        println!("({}) Patient {} {}", self.id, self.name, self.surname);
+        println!("({}) Patient {} {}", self.id, self.name.to_string().trim_end(), self.surname.to_string().trim_end());
         println!("Age: {}", self.age);
         println!("Height: {} cm", self.weight);
         println!("Weight: {} kg", self.height);
-        println!("Address: {}", self.address);
-        println!("Phone number: {}", self.phone_number);
+        println!("Address: {}", self.address.to_string().trim_end());
+        println!("Phone number: {}", self.phone_number.to_string().trim_end());
         
         println!("Diagnoses: ");
         let borrowed_diagnose = self.diagnose.borrow_mut();
